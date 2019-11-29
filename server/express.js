@@ -8,6 +8,7 @@ import morgan from 'morgan';
 
 import Template from "../template";
 import userRoutes from './routers/user.routes';
+import authRoutes from './routers/auth.routes';
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use(helmet());
 app.use(cors());
 
 app.use('/', userRoutes);
+app.use('/', authRoutes);
 app.get('/', (req, res) => {
     res.status(200).send(Template());
 });
