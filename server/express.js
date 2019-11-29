@@ -7,6 +7,7 @@ import cors from 'cors';
 import morgan from 'morgan';
 
 import Template from "../template";
+import userRoutes from './routers/user.routes';
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(compress());
 app.use(helmet());
 app.use(cors());
 
+app.use('/', userRoutes);
 app.get('/', (req, res) => {
     res.status(200).send(Template());
 });
