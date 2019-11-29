@@ -1,5 +1,4 @@
 const getErrorMessage = (err) => {
-    console.log(err);
     let message = '';
 
     function getUniqueErrorMessage(err) {
